@@ -2,38 +2,27 @@ package project;
 
 public class Product {
 	
-	private int productNumber;
-	private int stock;
+	private int productNumber;	
 	private double price;
-	private String description;
-	private String ProductType;
-	
+	private String description;	
+	private Stock stock;
 	
 	
 
 
-	public Product(int productNumber, int stock, double price,
+	public Product(int productNumber,  double price,
 			String description, String productType) {
 		super();
-		this.productNumber = productNumber;
-		this.stock = stock;
+		this.productNumber = productNumber;		
 		this.price = price;
 		this.description = description;
-		ProductType = productType;
+		
 	}
 
 
 
-	public int getStock()
-	{
-		return stock;
-	}
 	
-	public void deductStock(int quantity)
-	{
-		stock-=quantity;
-	}
-
+	
 
 	public double getPrice() {
 		
