@@ -9,29 +9,25 @@ public class OrderTrackingSystem {
 	Input input = new Input();
 	int seletedMenu;
 	Customer customer;
-	Date today =new Date();
-	 Order order;
+	Date todayDate =new Date();
+	Order order;
+	Payment payment;
 	List<Product> products = new ArrayList<Product>();
 	
 	 Product[] productSelected = new Product[2];
 	 
 	 public OrderTrackingSystem()
 	 {
-		 productSelected[0]= new Product(100, 5, 200,"mouse", "computerRelated");  //int productNumber, int stock, double price, 	String description, String productType
-		 productSelected[1]= new Product(101, 5, 200,"movie", "Audio_Video");
+		 productSelected[0]= new ComputerProducts(100,200,"mouse",5);
+		 productSelected[1]= new HealthRelatedProduct(101,200,"brufen",10);
+		
 		 
-		 for(Product p:productSelected)
-		 {
-			// if(p.getStock())
-			 products.add(p); 
-		 }
 	 }
 	 
 	
 	
 	
-	// productSelected = new Product(100, 5, 200,"mouse", "computerRelated");
-	 
+	
 	
 	
 	boolean selected=false;
@@ -61,12 +57,26 @@ public class OrderTrackingSystem {
 					   System.out.println("Your input is incorrect. Please try again!");
 				}
 				
-				 order = new Order("shipped",today,"prepaid",customer,products); //String status, Date shippedDate,String paymentType, Customer customer
+				// order = new Order("shipped",today,"prepaid",customer,products); //String status, Date shippedDate,String paymentType, Customer customer
+				
+				order = new Order(todayDate,customer);
+				order.addToCart(productSelected[0], 5);
+				order.addToCart(productSelected[1], 3);
 				 
 				 
-				 System.out.println("1.Show Monthly Report");
-					seletedMenu = input.selected();
+				 System.out.println("Show Monthly Report:");
 					
+					
+					
+					String leftAlignFormat = "| %-15s | %-12d | %-12s|%n";
+
+					System.out.format("+-----------------+--------------+-------------+%n");
+					System.out.printf("| CustomerName    | CreditLimit  | Order       |%n");
+					System.out.format("+-----------------+--------------+------------+%n");
+					
+					    System.out.format(leftAlignFormat, customer.getName(), 0, "Order1");
+					
+					System.out.format("+-----------------+----------------------------+%n");
 					
 			}
 			

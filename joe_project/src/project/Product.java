@@ -5,17 +5,19 @@ public class Product {
 	private int productNumber;	
 	private double price;
 	private String description;	
-	private Stock stock;
+	private int stock;
 	
 	
+
 
 
 	public Product(int productNumber,  double price,
-			String description, String productType) {
+			String description,int stock) {
 		super();
 		this.productNumber = productNumber;		
 		this.price = price;
 		this.description = description;
+		this.stock=stock;
 		
 	}
 
@@ -23,6 +25,19 @@ public class Product {
 
 	
 	
+   public int getStock()
+   {
+	   return stock;
+   }
+   
+   
+   public void setStock(int quantity)
+   {
+	   if(stock>=quantity)
+	   stock-=quantity;
+	   else
+		   stock=0;
+   }
 
 	public double getPrice() {
 		
