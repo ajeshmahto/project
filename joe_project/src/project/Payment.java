@@ -13,7 +13,8 @@ public class Payment {
 		if(customer instanceof CorporateCustomer)
 		{
 			CorporateCustomer currentCustomer = (CorporateCustomer) customer;
-			if(totalPrice>=currentCustomer.getCreditLimit())
+			if(totalPrice>=currentCustomer.getCreditLimit()&&
+			  (currentCustomer.getCreditType().equals("excellent")||currentCustomer.getCreditType().equals("excellent")))
 			{
 				if(checkForDiscountEligiblity(currentCustomer))
 				{
