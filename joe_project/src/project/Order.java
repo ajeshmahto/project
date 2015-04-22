@@ -11,6 +11,7 @@ public class Order {
 	private double totalOrderPrice;
 	private String paymentType;
 	private Customer customer;
+	private Shipment shipment;
 	
 	private List<Product> products = new ArrayList<Product>();
 	
@@ -36,8 +37,9 @@ public class Order {
 	{
 		if(product.getStock()>=quantity)	
 		products.add(product);
-		product.setStock(quantity);	
+		//product.setStock(quantity);	
 		
+		product.deductStock(quantity);
 	}
 	
 	public double totalPrice()
@@ -50,8 +52,27 @@ public class Order {
 		return sum;
 	}
 	
+	public void doShipment()
+	{
+		shipment.setShipmentDate(products);
+	}
 	
+	public List<Product> getProduct()
+	{
+	   	return products;
+	}
 	
+	public void rewardPoints(Product product, int quantity)
+	{
+		if(product instanceof ComputerProducts)
+			customer.setPoint(quantity*2);
+		else if(product instanceof HealthRelatedProduct)
+			customer.setPoint(quantity*1);
+		else if(product instanceof AudioVideoProduct)
+			customer.setPoint(quantity*1/2);
+		else if(product instanceof OtherProduct)
+			customer.setPoint(quantity*1/4);
+	}
 	
 
 }

@@ -21,14 +21,8 @@ public class OrderTrackingSystem {
 		 productSelected[0]= new ComputerProducts(100,200,"mouse",5);
 		 productSelected[1]= new HealthRelatedProduct(101,200,"brufen",10);
 		
-		 
 	 }
 	 
-	
-	
-	
-	
-	
 	
 	boolean selected=false;
 	
@@ -46,11 +40,11 @@ public class OrderTrackingSystem {
 				switch(seletedMenu)
 				{
 				   case 1:
-					   customer= new CorporateCustomer("ajesh","usa","corporate","excellent",5000.00,0);
+					   customer= new CorporateCustomer("ajesh","usa","excellent",5000.00,0);
 					   selected = true;
 					   break;
 				   case 2:
-					   customer= new PersonalCustomer("ajesh","usa","personal","poor",0);
+					   customer= new PersonalCustomer("ajesh","usa","poor",0);
 					   selected=true;
 					   break;
 				   default:	   

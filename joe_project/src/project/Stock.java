@@ -4,10 +4,11 @@ public class Stock {
 	
 	int productId;
 	int count;
+	private Product product;
 	
-	public Stock(int producId,int count)
+	public Stock(Product product,int count)
 	{
-		this.productId=productId;
+		this.product=product;
 		this.count=count;
 	}
 	

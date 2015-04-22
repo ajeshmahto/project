@@ -1,16 +1,17 @@
 package project;
 
+import java.util.Date;
+
 public class Product {
 	
 	private int productNumber;	
 	private double price;
 	private String description;	
 	private int stock;
+	private Date shipmentDate;
 	
 	
-
-
-
+	
 	public Product(int productNumber,  double price,
 			String description,int stock) {
 		super();
@@ -31,7 +32,7 @@ public class Product {
    }
    
    
-   public void setStock(int quantity)
+   public void deductStock(int quantity)
    {
 	   if(stock>=quantity)
 	   stock-=quantity;
@@ -43,5 +44,18 @@ public class Product {
 		
 		return price;
 	}
+	
+	public Date getShipmentDate() {
+		return shipmentDate;
+	}
+
+
+	public void setShipmentDateOfCurrentStock(Date shipmentDate) {
+		this.shipmentDate = shipmentDate;
+		
+	}
+	
+	
+
 
 }

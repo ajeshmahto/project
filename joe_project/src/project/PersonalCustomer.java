@@ -4,9 +4,9 @@ public class PersonalCustomer extends Customer {
 	
 	
 
-	public PersonalCustomer(String name, String address, String type,
+	public PersonalCustomer(String name, String address, 
 			String creditType, int point) {
-		super(name, address, type, creditType,  point);
+		super(name, address,  creditType,  point);
 		
 	}
 	
